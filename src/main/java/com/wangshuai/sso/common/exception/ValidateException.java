@@ -1,0 +1,46 @@
+package com.wangshuai.sso.common.exception;
+
+
+import com.wangshuai.sso.common.ResultCode;
+
+/**
+ * 验证异常
+ *
+ * @author wangshuai
+ * @version V1.0
+ * @date 2017-11-20 18:08
+ */
+public class ValidateException extends ApplicationException {
+    private static final long serialVersionUID = 5214146953001236471L;
+
+    public static final String MESSAGE = "验证异常";
+
+    public ValidateException() {
+        super(MESSAGE);
+    }
+
+    public ValidateException(String message) {
+        super(message);
+        this.code = ResultCode.VALIDATE_ERROR;
+    }
+
+    public ValidateException(int code, String message) {
+        super(message);
+        this.code = code;
+    }
+
+    public ValidateException(String message, Throwable cause) {
+        super(message, cause);
+        this.code = ResultCode.VALIDATE_ERROR;
+    }
+
+    public ValidateException(int code, String message, Throwable cause) {
+        super(message, cause);
+        this.code = code;
+    }
+
+    public ValidateException(Throwable cause) {
+        super(cause);
+        this.code = ResultCode.VALIDATE_ERROR;
+    }
+}
